@@ -17,8 +17,7 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   // Add some markers to the map.
   // Note: The code uses the JavaScript Array.prototype.map() method to
-  // create an array of markers based on a given "locations" array.
-  // The map() method here has nothing to do with the Google Maps API.
+
   var markers = locations.map((location, i) => {
     return new google.maps.Marker({
       position: location,
@@ -37,7 +36,7 @@ var locations = [
 { lat: 43.974033, lng: -77.526451 },
 { lat: 44.014561, lng: -76.971725 },
 { lat: 44.015503, lng: -77.145782 }
-]
+];
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=myMap"></script>

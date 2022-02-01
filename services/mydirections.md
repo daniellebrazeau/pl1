@@ -9,7 +9,7 @@ Be creative and use multiple parameters from the API documentation to earn a top
 ## Directions URL
 
 ```
-https://YourDirectionsApiURLGoesHere
+https://maps.googleapis.com/maps/api/directions/json?avoid=tolls&origin=819+Frankford+Stirling+Road+K0K+2CO&destination=Canadas+Wonderland+Toronto+Ontario&departure_time=1652440305&waypoints=optimize:true%7C15355+Telephone+Rd+Brighton+ON+K0K+1H0%7C1+Bass+Pro+Mills+Dr+Vaughan+ON+L4K+5W4&stopover:true&traffic_model=optimistic&key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE
 ```
 
 ## Next paste the full JSON response to this query here:

@@ -9,28 +9,19 @@
 <script>
   
 function initMap() {
-   var options = {
-      zoom:10,
-      center: { lat:44.1023391, lng:-77.2674608} //Coordinates of Prince edward county
-   }
-var map = new google.maps.Map(document.getElementById('map'), options);
-var marker = new google.maps.Marker({
-   position:{ lat: 43.955105, lng: -77.44561 }, // Norman Hardie Winery coordinates
-   map:map, //Map that we need to add
-   icon:'mapbox-marker-icon-20px-pink.png',
-   // adding custom icons 
- 
-   draggarble: false// If set to true you can drag the marker
-});
+  const myLatLng = { lat:44.1023391, lng:-77.2674608}; //Coordinates of Prince edward county
+   };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10,
+    center: myLatLng,
+  });
 
-var information = new google.maps.InfoWindow({
-   content: '<h4>Norman Hardie Winery</h4>'
-});
+  new google.maps.Marker({
+    position: { lat: 43.955105, lng: -77.44561 },
+    map,
+    title: "Norman Hardie Winery",
+  });
 
-marker.addListener('click', function() {
-   information.open(map, marker);
-});  
-  
 
 </script>
 

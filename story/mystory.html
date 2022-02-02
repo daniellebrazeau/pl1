@@ -15,6 +15,13 @@ var mapProp= {
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 };
 
+var marker = new google.maps.Marker({
+   position:{ lat: 43.955105, lng: -77.44561 }, // Norman Hardie Winery coordinates
+   map:map //Map that we need to add
+   icon:'https://img.icons8.com/fluent/48/000000/marker-storm.png',
+   // adding custom icons (Here I used a Flash logo marker)
+   draggarble: false// If set to true you can drag the marker
+});
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=myMap"></script>

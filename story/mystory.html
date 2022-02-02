@@ -5,15 +5,15 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w"></script>
     <script type="text/javascript">
 
+          var image
+            "story/mapbox-marker-icon-20px-pink.png";
           
-          function InitMap() {
+            function InitMap() {
             const map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 10,
                 center: new google.maps.LatLng(43.9796235469392, -77.17746545930656),
                 mapTypeId: google.maps.MapTypeId.HYBRID
             });
-            var image
-              "story/mapbox-marker-icon-20px-pink.png";
 
             var locations = [
             ['RedTail Winery', 43.974033, -77.526451, 1],
@@ -35,7 +35,7 @@
                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                     map: map,
                     Animation: google.maps.Animation.DROP,
-                    icon: image
+                    icon: image,
                     
                 });
                 google.maps.event.addListener(marker, 'click', (function (marker, i) {

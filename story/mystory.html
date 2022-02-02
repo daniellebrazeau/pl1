@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>Danielle's Story</h1>
-
-<div id="map" style="width:100%;height:700px;"></div>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initMap"></script>
-<script src="mystory.js"></script>
-<style>
+    <!--Adapted from https://developers.google.com/maps/documentation/javascript/marker-clustering#maps_marker_clustering-html-->
+  <head>
+    <title>Marker Clustering</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>   
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initMap"
+      defer>
+    </script>
+    <script src="mystory.js"></script>
+    <style>
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
         #map {
@@ -30,7 +32,4 @@
   
       
   </body>
-</html>
-</body>
-</html>
 </html>

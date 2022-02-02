@@ -9,18 +9,18 @@
 <script>
   
 function initMap() {
-  const myLatLng = { lat:44.1023391, lng:-77.2674608}; //Coordinates of Prince edward county
-   };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 10,
-    center: myLatLng,
+    center: { lat:44.1023391, lng:-77.2674608}, //Coordinates of Prince edward county
   });
-
-  new google.maps.Marker({
+  const image =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+  const beachMarker = new google.maps.Marker({
     position: { lat: 43.955105, lng: -77.44561 },
     map,
-    title: "Norman Hardie Winery",
+    icon: image,
   });
+}  
 
 
 </script>

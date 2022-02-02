@@ -7,22 +7,23 @@
 
           
           function InitMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
+            const map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 10,
                 center: new google.maps.LatLng(43.9796235469392, -77.17746545930656),
                 mapTypeId: google.maps.MapTypeId.HYBRID
             });
 
             var locations = [
-            ['Norman Hardie Winery', 43.955105,-77.44561, 1],
-            ['Hillier Estates Winery', 43.970966, -77.462997, 2],
-            ['RedTail Winery', 43.974033, -77.526451, 3],
-            ['Waupoos Estates & Winery', 44.014561, -76.971725, 4],
-            ['Prince Eddies Brewing Company', 44.015503, -77.145782, 5],
-            ['Lavender fields', 43.99814053, -77.39870897, 6],
-            ['North Beach', 43.9561822, -77.52706464,7],
-            ['Sandbanks Provincial Park', 43.91072506,-77.22887777, 8],
-            ['Mustang Drive In', 44.008682022771055, -77.24475842939066, 9]
+            ['RedTail Winery', 43.974033, -77.526451, 1],
+            ['North Beach', 43.9561822, -77.52706464,2],
+            ['Hillier Estates Winery', 43.970966, -77.462997, 3],
+            ['Norman Hardie Winery', 43.955105,-77.44561, 4],
+            ['Lavender fields', 43.99814053, -77.39870897, 5],
+            ['Mustang Drive In', 44.008682022771055, -77.24475842939066, 6],
+            ['Sandbanks Provincial Park', 43.91072506,-77.22887777, 7],
+            ['Prince Eddies Brewing Company', 44.015503, -77.145782, 8],
+            ['Waupoos Estates & Winery', 44.014561, -76.971725, 9]
+            
             ];
 
             var infowindow = new google.maps.InfoWindow();

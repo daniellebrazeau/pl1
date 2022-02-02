@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <!--Adapted from https://developers.google.com/maps/documentation/javascript/marker-clustering#maps_marker_clustering-html-->
-  <head>
-    <title>Danielle's Story</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initMap"
-      defer>
+<head>
+    <title>My story</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w"></script>
+    <script type="text/javascript">
+        var locations = [
+            ['Norman Hardie Winery', 43.955105,-77.44561, 1],
+            ['Hillier Estates Winery', 43.970966, -77.462997, 2],
+            ['RedTail Winery', 43.974033, -77.526451, 3],
+            ['Waupoos Estates & Winery', 44.014561, -76.971725, 4],
+            ['Prince Eddies Brewing Company', 44.015503, -77.145782, 5],
+            ['Lavender fields ', 43.99814053, -77.39870897, 6],
+            ['Presqu'ile Provincial Park',44.00953585, -77.74260577, 7],
+            ['North Beach', 43.9561822, -77.52706464,8],
+            ['Sandbanks Provincial Park', 43.91072506,-77.22887777,9]
+        ];
+        function InitMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: new google.maps.LatLng(44.1023391, -77.26746087),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+        }
     </script>
-    <script src="mystory.js"></script>
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-        #map {
-        height: 100%;
-        }
-
-        /* Optional: Makes the sample page fill the window. */
-        html,
-        body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        }
-    </style>
-
-  </head>
-  <body>
-      <div id=title> Best Things to do in Prince Edward County </div>    
-    <div id="map"></div>
-  
-      
-  </body>
+</head>
+<body onload="InitMap();">
+    <h1>Favourite Places to go in Prince Edward County</h1>
+    <div id="map" style="height: 500px; width: auto;">
+    </div>
+</body>
 </html>

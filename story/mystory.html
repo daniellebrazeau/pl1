@@ -13,7 +13,7 @@
                 mapTypeId: google.maps.MapTypeId.HYBRID
             });
 
-            const locations = [
+            var locations = [
             ['RedTail Winery', 43.974033, -77.526451, 1],
             ['North Beach\t Over 1km of sand beach', 43.9561822, -77.52706464,2],
             ['Hillier Estates Winery', 43.970966, -77.462997, 3],
@@ -26,8 +26,8 @@
             
             ];
 
-            const infowindow = new google.maps.InfoWindow();
-            const marker, i;
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
             for (i = 0; i < locations.length; i++) {
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),

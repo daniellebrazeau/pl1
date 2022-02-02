@@ -5,8 +5,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w"></script>
     <script type="text/javascript">
 
-          var image
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/star.png%22";
+    
           
             function InitMap() {
               const map = new google.maps.Map(document.getElementById('map'), {
@@ -34,8 +33,9 @@
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                     map: map,
+                    icon: "https://javascript.plainenglish.io/add-custom-markers-with-the-google-maps-javascript-api-43e8b83f4f7d",
                     Animation: google.maps.Animation.DROP,
-                    icon: image,
+
                     
                 });
                 google.maps.event.addListener(marker, 'click', (function (marker, i) {

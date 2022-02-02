@@ -2,21 +2,6 @@
 <html>
 <head>
     <title>My story</title>
-    <style>
-      body {
-        color: #FDF5E6;
-      }
-      #map {
-        height: 500px; 
-        width: auto;
-      }
-      h1{
-        text-align: center;
-        font-size: 50pt;
-        color: salmon;
-      }
-
-    </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w"></script>
     <script type="text/javascript">
   
@@ -56,11 +41,26 @@
            }
 
     </script>
+    <style>
+      body {
+        color: #FDF5E6;
+      }
+      #map {
+        height: 500px; 
+        width: auto;
+      }
+      h1{
+        text-align: center;
+        font-size: 50pt;
+        color: salmon;
+      }
+
+    </style>
 </head>
 <body>
     <h1>Favourite Places to go in Prince Edward County</h1>
     <div id="map"></div>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&InitMap&v=weekly"
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=InitMap&v=weekly"
       async>
     </script>
   

@@ -26,14 +26,16 @@
             ['Waupoos Estates & Winery', 44.014561, -76.971725, 9]
             
             ];
-
+            var image = {
+              "mapbox-marker-icon-20px-pink.png";
+            };
             var infowindow = new google.maps.InfoWindow();
             var marker, i;
             for (i = 0; i < locations.length; i++) {
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                     map: map,
-                    icon: "https://javascript.plainenglish.io/add-custom-markers-with-the-google-maps-javascript-api-43e8b83f4f7d",
+                    icon: image,
                     Animation: google.maps.Animation.DROP,
 
                     

@@ -31,15 +31,6 @@
             ['Sandbanks Provincial Park', 43.91072506,-77.22887777, 8],
             ['Mustang Drive In', 44.008682022771055, -77.24475842939066, 9]
         ];
-        function setMarkers(map){
-          var image = {
-          url: "D:\Documents\Danielles school notes\Sem 2\GEom99\pl1\story\mapbox-marker-icon-20px-pink.png",
-          size: new.google.maps.Size(20,32),
-          origin: new.google.maps.Point(0,0),
-          anchor: new.google.maps.Point(0,32)
-        };  
-
-        }
           
           function InitMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -54,7 +45,6 @@
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                     map: map,
-                    icon: image
                 });
                 google.maps.event.addListener(marker, 'click', (function (marker, i) {
                     return function () {

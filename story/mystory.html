@@ -2,9 +2,16 @@
 <html>
 <head>
     <title>My story</title>
+    <style>
+      #map {
+        height: 500px; 
+        width: auto;
+      }
+
+    </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w"></script>
     <script type="text/javascript">
-       
+  
         var locations = [
             ['Norman Hardie Winery', 43.955105,-77.44561, 1],
             ['Hillier Estates Winery', 43.970966, -77.462997, 2],
@@ -16,12 +23,11 @@
             ['North Beach', 43.9561822, -77.52706464,8],
             ['Sandbanks Provincial Park', 43.91072506,-77.22887777, 9]
         ];
-      
         function InitMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 10,
-                center: new google.maps.LatLng(43.99999635480229, -77.24777373046287),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                center: new google.maps.LatLng(44.1023391, -77.26746087),
+                mapTypeId: google.maps.MapTypeId.hybrid
             });
             var infowindow = new google.maps.InfoWindow();
             var marker, i;
@@ -37,12 +43,12 @@
                     }
                 })(marker, i));
             }
-        }
+           }
     </script>
 </head>
 <body onload="InitMap();">
     <h1>Favourite Places to go in Prince Edward County</h1>
-    <div id="map" style="height: 500px; width: auto;">
+    <div id="map">
     </div>
 </body>
 </html>

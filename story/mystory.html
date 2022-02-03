@@ -6,14 +6,14 @@
     <script type="text/javascript">
 
     
-          
+          //calling map function, hybrid style
             function InitMap() {
               const map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 10,
                 center: new google.maps.LatLng(43.9796235469392, -77.17746545930656),
                 mapTypeId: google.maps.MapTypeId.HYBRID
             });
-
+            // my locations set up for a for loop image source from google
             var locations = [
             ['RedTail Winery', 43.974033, -77.526451, 1,"mapbox-marker-icon-20px-pink.png"],
             ['North Beach', 43.9561822, -77.52706464,2,"mapbox-marker-icon-20px-blue.png" ],
@@ -28,6 +28,7 @@
             
             ];
            
+            //info window ideology from: https://github.com/googlemaps/js-samples/tree/main/samples/infowindow-simple
           
             var infowindow = new google.maps.InfoWindow();
             var marker, i;
@@ -38,7 +39,7 @@
                     icon: locations[i][4],
                     Animation: google.maps.Animation.DROP,
 
-                    
+                // on click of marker call info window     
                 });
                 google.maps.event.addListener(marker, 'click', (function (marker, i) {
                     return function () {
@@ -88,15 +89,19 @@
     </style>
 </head>
 <body>
+  <!-- Title-->
     <h1>"Go-To" Places in Prince Edward County</h1>
     <div id="map"></div>
+    <!-- calling map-->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=InitMap&v=weekly"
       async>
     </script>
+    <!--Main description-->
     <div class= "description">Here are some of my favourite places in Prince Edward County! Make a day of it and tour the County <br>
     Try all the tasty food and beverages the County has to offer! <br>
     All wineries are defined with a pink icon, beaches are symbolized with blue and yellow are all other activities!
     </div>
+    <!--Each individual description-->
     <div class= "placename">Norman Hardie Winery</div>
       <div class= "text">Wine, pizza and oysters are sure to draw a crowd everyday in the summer. My favourite Chardonnay in the County</div>
 

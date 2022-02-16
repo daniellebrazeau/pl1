@@ -58,6 +58,7 @@
         longitude: 2.2975893697334264,
         latitude: 48.875256380469736
      };
+
      const simpleMarkerSymbol = {
         type: "simple-marker",
         color: [170,51,106],  // pink
@@ -68,10 +69,14 @@
      };
     
      const pointGraphic = new Graphic({
-        geometry: point, point2,
+        geometry: point2,
         symbol: simpleMarkerSymbol
      });
-     graphicsLayer.add(pointGraphic);
+     const pointGraphic2 = new Graphic({
+        geometry: point,
+        symbol: simpleMarkerSymbol
+     });
+     graphicsLayer.add(pointGraphic,pointGraphic2);
     
      // Create a polygon geometry
      const polygon = {

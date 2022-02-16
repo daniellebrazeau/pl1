@@ -15,7 +15,7 @@ https://maps.googleapis.com/maps/api/directions/json?avoid=tolls&origin=819+Fran
 ## Next paste the full JSON response to this query here:
 
 ```JSON
-PASTE_YOUR_JSON_RESULTS_HERE
+<script src> "mydirections.js" </script>
 ```
 ____
 ## Rubric

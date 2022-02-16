@@ -1,70 +1,102 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
-
-    <style>
-      .title {
-        color:blueviolet;
-        font-size: 40;
-      }
-      html,
-      body,
-      #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
-    </style>
-
-    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
-    <script src="https://js.arcgis.com/4.22/"></script>
-
-    <script>
-      require(["esri/config","esri/Map", "esri/views/MapView","esri/Graphic", "esri/layers/GraphicsLayer"],
-      function(esriConfig,Map, MapView, Graphic, GraphicsLayer){
-
-        esriConfig.apiKey = "AAPKa319698b4fd9475b9bb6f263d527f7f6l1SdAMawiCIx-5tDPI9OWUfyac9oo45ui_zns6gZWV37anr-6pOIoZb_gc8P56Lc";
-
-        const map = new Map({
-          basemap: "arcgis-topographic" // Basemap layer service
-        });
-
-        const view = new MapView({
-          map: map,
-          center: [2.349014, 48.864716], // Longitude, latitude
-          zoom: 13, // Zoom level
-          container: "viewDiv" // Div element
-        });
-        const graphicsLayer = new GraphicsLayer();
-        map.add(graphicsLayer);
-
-        const point = { //Create a point
-          type: "point",
-          longitude: 2.294938,
-          latitude: 48.858242
-        };
-        48.858242
-        const simpleMarkerSymbol = {
-          type: "simple-marker",
-          color: [255,105,180],  // pink
-          outline: {
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+      <title>Valentines day map</title>
+      <style>
+        html, body, #viewDiv {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          width: 100%;
+        }
+      </style>
+      <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+      <script src="https://js.arcgis.com/4.22/"></script>
+      <script>
+    
+      require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+    
+        "esri/Graphic",
+        "esri/layers/GraphicsLayer"
+    
+        ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
+    
+      esriConfig.apiKey = "AAPKa319698b4fd9475b9bb6f263d527f7f6l1SdAMawiCIx-5tDPI9OWUfyac9oo45ui_zns6gZWV37anr-6pOIoZb_gc8P56Lc";
+    
+      const map = new Map({
+        basemap: "arcgis-topographic" //Basemap layer service
+      });
+    
+      const view = new MapView({
+        map: map,
+        center: [2.349014, 48.864716], //Longitude, latitude
+        zoom: 13,
+        container: "viewDiv"
+     });
+    
+     const graphicsLayer = new GraphicsLayer();
+     map.add(graphicsLayer);
+    
+     const point = { //Create a point
+        type: "point",
+        longitude: 2.294938,
+        latitude: 48.858242
+     };
+     const simpleMarkerSymbol = {
+        type: "simple-marker",
+        color: [170,51,106],  // pink
+        outline: {
             color: [255, 255, 255], // White
             width: 1
-        }}
-        const pointGraphic = new Graphic({
-          geometry: point,
-          symbol: simpleMarkerSymbol
-        });
-        graphicsLayer.add(pointGraphic);
-    });
+        }
+     };
+    
+     const pointGraphic = new Graphic({
+        geometry: point,
+        symbol: simpleMarkerSymbol
+     });
+     graphicsLayer.add(pointGraphic);
+    
+     // Create a polygon geometry
+     const polygon = {
+        type: "polygon",
+        rings: [
+            [2.342468, 48.872794], //Longitude, latitude
+            [2.321954, 48.884422], //Longitude, latitude
+            [2.291520, 48.879493], //Longitude, latitude
+            [2.278045, 48.860326],   //Longitude, latitude
+            [2.345761, 48.827164],  
+            [2.399534, 48.864186],
+            [2.398391543780911,48.88026285085118], 
+            [2.377994159104578, 48.891309469253564], 
+            [2.343014, 48.873600], //Longitude, latitude
+        ]
+     };
+     const simpleFillSymbol = {
+        type: "simple-fill",
+        color: [250,160,160, 0.45],  // pink, opacity 45%
+        outline: {
+            color: [255, 255, 255],
+            width: 1
+        }
+     };
+    
+     const polygonGraphic = new Graphic({
+        geometry: polygon,
+        symbol: simpleFillSymbol,
+    
+     });
+     graphicsLayer.add(polygonGraphic);
+    
+     });
     </script>
-
-  </head>
-  <body>
-    <div class="title">Valentines Day in Paris</div>
-    <div id="viewDiv"></div>
-  </body>
-</html>
+    </head>
+    <body>
+      <div id="viewDiv"></div>
+    </body>
+    </html>

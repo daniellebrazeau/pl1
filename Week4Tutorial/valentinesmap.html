@@ -85,7 +85,7 @@
             [2.343014, 48.873600], //Longitude, latitude
        
          ] 
-     };
+      };
      const simpleFillSymbol = {
         type: "simple-fill",
         color: [250,160,160, 0.45],  // pink, opacity 45%
@@ -100,8 +100,27 @@
         symbol: simpleFillSymbol,
     
      });
-     graphicsLayer.add(polygonGraphic);
+      graphicsLayer.add(polygonGraphic);
     
+      const popupTemplate = {
+        title: "{Name}",
+        content: "{Description}"
+ }
+      const attributes = {
+        Name: "Paris",
+        Description: "Paris, one of the most beautiful cities in the world, also called the city of love."
+ }
+
+      const polygonGraphic = new Graphic({
+        geometry: polygon,
+        symbol: simpleFillSymbol,
+
+        attributes: attributes,
+        popupTemplate: popupTemplate
+
+      });
+      graphicsLayer.add(polygonGraphic);
+
      });
     </script>
     </head>

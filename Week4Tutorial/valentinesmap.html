@@ -45,16 +45,16 @@
         container: "viewDiv"
      });
     
-     const graphicsLayer = new GraphicsLayer();
-     map.add(graphicsLayer);
+      const graphicsLayer = new GraphicsLayer();
+      map.add(graphicsLayer);
     
-     const point = { //Create a point
+      const point = { //Create a point
         type: "point",
         longitude: 2.294938,
         latitude: 48.858242
-     };
+      };
   
-     const simpleMarkerSymbol = {
+      const simpleMarkerSymbol = {
         type: "simple-marker",
         color: [170,51,106],  // pink
         outline: {
@@ -63,15 +63,15 @@
         }
      };
     
-     const pointGraphic = new Graphic({
+      const pointGraphic = new Graphic({
         geometry: point,
         symbol: simpleMarkerSymbol
-     });
+       });
      
-     graphicsLayer.add(pointGraphic);
+      graphicsLayer.add(pointGraphic);
     
      // Create a polygon geometry
-     const polygon = {
+      const polygon = {
         type: "polygon",
         rings: [
             [2.342468, 48.872794], //Longitude, latitude
@@ -85,8 +85,8 @@
             [2.343014, 48.873600], //Longitude, latitude
        
          ] 
-      };
-     const simpleFillSymbol = {
+     };
+      const simpleFillSymbol = {
         type: "simple-fill",
         color: [250,160,160, 0.45],  // pink, opacity 45%
         outline: {
@@ -94,22 +94,14 @@
             width: 1
         }
      };
-    
-     const polygonGraphic = new Graphic({
-        geometry: polygon,
-        symbol: simpleFillSymbol,
-    
-     });
-      graphicsLayer.add(polygonGraphic);
-    
       const popupTemplate = {
         title: "{Name}",
         content: "{Description}"
- }
+      }
       const attributes = {
         Name: "Paris",
         Description: "Paris, one of the most beautiful cities in the world, also called the city of love."
- }
+       }
 
       const polygonGraphic = new Graphic({
         geometry: polygon,
